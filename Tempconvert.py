@@ -1,4 +1,4 @@
-"""temp conversion"""
+"""Temp converter"""
 
 initques = input("Hi! Type 'C' for C to F conversion or type 'F' for F to C conversion: ").lower()
 
