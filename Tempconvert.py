@@ -3,11 +3,11 @@
 initques = input("Hi! Type 'C' for C to F conversion or type 'F' for F to C conversion: ").lower()
 
 def functempc(x):
-	z = int(x)*1.8+32
+	z = int(int(x)*1.8+32)
 	return x + " degrees Celsius is " + str(z) + " degrees Fahrenheit."
 
 def functempf(x):
-	z = (int(x)-32) * 1.8
+	z = int(((int(x)-32) * 5) /9)
 	return x + " degrees Fahrenheit is " + str(z) + " degrees Celsius."
 	
 def mainfunc(x):
@@ -21,3 +21,13 @@ def mainfunc(x):
 		return "Sorry, I don't understand. Please type 'C' for C to F conversion or 'F' for F to C conversion"
 	
 print(mainfunc(initques))
+
+restart = input("Type 'T' to convert another temperature or press Enter to quit: ").lower()
+
+def restartfunc(x):
+	if x == "t":
+		initques = input("Type 'C' for C to F conversion or type 'F' for F to C conversion: ").lower()
+		return mainfunc(initques)
+	else:
+		return "Bye! "
+print(restartfunc(restart))
