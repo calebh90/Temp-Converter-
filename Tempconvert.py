@@ -1,6 +1,7 @@
 """Temp converter"""
 
 initques = input("Hi! Type 'C' for C to F conversion or type 'F' for F to C conversion: ").lower()
+i = 0
 
 def functempc(x):
 	z = int(int(x)*1.8+32)
@@ -24,10 +25,17 @@ print(mainfunc(initques))
 
 restart = input("Type 'T' to convert another temperature or press Enter to quit: ").lower()
 
+def counterfunc(x):
+	if x=="t":
+		i = i + 1
+	return counterfunc(restart)	
 def restartfunc(x):
 	if x == "t":
 		initques = input("Type 'C' for C to F conversion or type 'F' for F to C conversion: ").lower()
 		return mainfunc(initques)
 	else:
 		return "Bye! "
-print(restartfunc(restart))
+
+while restart == "t" and i >= 1:
+	restart = input("Type 'T' to convert another temperature or press Enter to quit: ").lower()
+	print(restartfunc(restart))
